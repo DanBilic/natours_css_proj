@@ -63,6 +63,10 @@ body {
   /* translate shifts the element itself */
   /*shift 50 % of the elements width to the left and 50 %  to the top*/
   transform: translate(-50%, -50%);
+
+  /* aligns the text in the center */
+  /* inline elements count as text too and get also aligned in the center */
+  text-align: center;
 }
 
 .heading-primary {
@@ -71,6 +75,7 @@ body {
 
   /* hides the part behind the element */
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -133,4 +138,41 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* buttons */
+
+/* btn:link -> link is pseudo class */
+/* pseudo classes are elements under a certain condition */
+/* link means: apply attributes when the class is an a tag */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+
+  /* box-model like padding only on block elements -> a tag is an inline element by default */
+  display: inline-block;
+
+  border-radius: 100px;
+
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  /* x-axis| y-axis | blur | shadow color */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  /* the -1px are related to the .btn:link state */
+  transform: translateY(-1px);
+
+  /* less shadow and less blur (3rd value) */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
