@@ -61,12 +61,16 @@ body {
   top: 40%;
   left: 50%;
   /* translate shifts the element itself */
+  /*shift 50 % of the elements width to the left and 50 %  to the top*/
   transform: translate(-50%, -50%);
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+
+  /* hides the part behind the element */
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -74,6 +78,14 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+
+  /* animation */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  /* kurz */
+  /* animation: moveInLeft 1s ease-out */
 }
 
 .heading-primary-sub {
@@ -83,4 +95,42 @@ body {
   /* dicke der buchstaben */
   font-weight: 700;
   letter-spacing: 17.4px;
+
+  /* animation */
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+/* animations in header */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
