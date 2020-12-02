@@ -1,0 +1,23 @@
+{
+  "name": "natours_css_proj_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanBilic/natours_css_proj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanBilic/natours_css_proj/issues"
+  },
+  "homepage": "https://github.com/DanBilic/natours_css_proj#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
