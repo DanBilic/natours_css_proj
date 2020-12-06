@@ -1,0 +1,78 @@
+/* buttons */
+
+.btn {
+  /* btn:link -> link is pseudo class */
+  /* pseudo classes are elements under a certain condition */
+  /* link means: apply attributes when the class is an a tag */
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* padding: 15px 40px; */
+    padding: 1.5rem 4rem;
+
+    /* box-model like padding only on block elements -> a tag is an inline element by default */
+    display: inline-block;
+
+    /* border-radius: 100px; */
+    border-radius: 10rem;
+
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    /* transform: translateY(-3px); */
+    transform: translateY(-0.3rem);
+    /* x-axis| y-axis | blur | shadow color */
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    /* pseudo elements after only shows when button in hover state */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:active {
+    /* the -1px are related to the .btn:link state */
+    /* transform: translateY(-1px); */
+    transform: translateY(-0.1rem);
+
+    /* less shadow and less blur (3rd value) */
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  /* the ::after element behaves like a child of btn */
+  &::after {
+    content: ""; /* an after pseudo element needs a content attribute */
+    display: inline-block;
+    height: 100%; /*100% width of the button*/
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* behind the button */
+
+    /* Eine Transition bezeichnet den Übergang zwischen zwei Zuständen eines HTML-Elements. */
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    /* animation: animation-name | animation-duration | animation-timing-function | animation-delay */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards; /* apply styles of 0% before animation starts */
+  }
+}

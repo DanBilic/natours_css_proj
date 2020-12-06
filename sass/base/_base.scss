@@ -1,0 +1,25 @@
+// BASIC DEFINITIONS
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  /* box-sizing wird von allen elementen geerbt */
+  box-sizing: inherit;
+}
+
+/* root font size */
+html {
+  /* orientiert sich am font-size dass durch den browser zur verfügung gestellt wird */
+
+  // this defines what 1 rem is
+  font-size: 62.5%; /* 16px vom browser -> 62.5 % ergibt 10 px was als ausgnagsbasis für rem benutzt wird*/
+
+  /* fonst-size: 10px -> überschreibt die vom webserver angegebene font-size */
+}
+
+body {
+  box-sizing: border-box;
+}
