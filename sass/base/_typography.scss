@@ -50,3 +50,32 @@ body {
     animation-timing-function: ease-out;
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  // background image nimmt dadurch nur den space des contents
+  // und nicht die ganze width des containers
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  // clips the background exactly where the text sits -> the text sits on top of that
+  -webkit-background-clip: text;
+
+  // make text transparent to see background image
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+
+    // x-direction | y-direction | off blur
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
