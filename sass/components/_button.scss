@@ -54,6 +54,15 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
   /* the ::after element behaves like a child of btn */
   &::after {
     content: ""; /* an after pseudo element needs a content attribute */
