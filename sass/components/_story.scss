@@ -1,0 +1,41 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 0.3rem;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+
+  // skews all child elements too
+  transform: skewX(-12deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    background-color: orangered;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+
+    // circle: radius | at | vertical | horizontel
+    // % is calculated based on the current element
+    // shape outside only works if the element defines dimensons(width and height) and a float
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    // correct the skewX from parent element
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__img {
+    // 100% cuz width is defined in the shape and there takes its width
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+}
