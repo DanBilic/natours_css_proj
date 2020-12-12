@@ -27,15 +27,47 @@
 
     // correct the skewX from parent element
     transform: translateX(-3rem) skewX(12deg);
+    position: relative;
   }
 
   &__img {
     // 100% cuz width is defined in the shape and there takes its width
-    width: 100%;
+    // width: 100%;
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s;
   }
 
   &__text {
     transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+
+    // fix glitch after animation
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  // on hover change image
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+
+    // brightness: above 100% brighter | below 100% darker
+    filter: blur(0.3rem) brightness(80%);
   }
 }
