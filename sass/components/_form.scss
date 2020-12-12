@@ -1,0 +1,64 @@
+.form {
+  // all form__groups except the last one
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+
+    // by default web browser dont give the form elements the same font-family as the webpage defines
+    // inherit the font-family defined by the web page
+    font-family: inherit;
+
+    // by default web browser does not set color to inputs
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 0.3rem;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+
+    // transparent is also a color
+    // set also the bottom to add it to the height of the element
+    // so the input does not move on focus
+    border-bottom: 0.3rem solid transparent;
+
+    width: 90%;
+    display: block;
+
+    &:focus {
+      //   outline is given to form inputs by the web browser by default
+      outline: none;
+
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 0.3rem solid $color-primary;
+    }
+
+    // when the input is on focus and the input is invalid
+    // invalid: (browser checks for that depending the input type)
+    &:focus:invalid {
+      border-bottom: 0.3rem solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  // placeholder-shown is active when the placeholder is rendered on screen
+  // when placecolder is renderen than hide label
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+}
