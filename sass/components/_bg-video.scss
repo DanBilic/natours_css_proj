@@ -1,0 +1,23 @@
+.bg-video {
+  // .section-stories is position relative
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+
+  //   clips the video or image that overflows the element
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+
+    // fils the entire parent while still maintaining its aspect ratio
+    // behaves like background-image: cover  -> cover the whole element with the image
+    // but object fit works with html elements and videos
+    object-fit: cover;
+  }
+}

@@ -128,6 +128,9 @@ body {
 .u-center-text {
   text-align: center; }
 
+.u-margin-bottom-huge {
+  margin-bottom: 10rem; }
+
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
 
@@ -415,6 +418,20 @@ body {
     transform: translateX(-4rem) scale(1);
     filter: blur(0.3rem) brightness(80%); }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 .header {
   height: 95vh;
   /*linear-grandient is always used with background-image*/
@@ -499,4 +516,4 @@ body {
 
 .section-stories {
   padding: 15rem 0;
-  background-color: #f7f7f7; }
+  position: relative; }
