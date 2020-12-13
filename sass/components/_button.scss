@@ -4,6 +4,7 @@
   /* btn:link -> link is pseudo class */
   /* pseudo classes are elements under a certain condition */
   /* link means: apply attributes when the class is an a tag */
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -20,6 +21,10 @@
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
+
+    // change for the button element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -35,7 +40,9 @@
       opacity: 0;
     }
   }
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     /* the -1px are related to the .btn:link state */
     /* transform: translateY(-1px); */
     transform: translateY(-0.1rem);
